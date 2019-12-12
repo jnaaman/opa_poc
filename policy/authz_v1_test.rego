@@ -142,27 +142,27 @@ test_not_authorized_matches_all_properties_except_organization {
 		 with input as {"subjects": ["x"], "action": "y", "resource": "z", "organizationId": "w1"}
 }
 
-test_authorized_when_resource_is_hierarchical {
-	authorized with data.policies.polid as {"members": ["x1"], "organizationId": "1234", "statements": {"statementid": {"effect": "allow", "actions": ["y0"], "resources": ["e0"]}}}
-	     with data.tenants as [ { "id": "o0", "envs": [ { "id": "e0", "clusters" : [ { "id": "z0" } ] } ] } ]
+test_authorized_when_resource_is_hierarchical_env {
+	authorized with data.policies.polid as {"members": ["x1"], "organizationId": "1234", "statements": {"statementid": {"effect": "allow", "actions": ["y0"], "resources": ["crn://e0"]}}}
+	     with data.tenants as [ { "id": "o0", "envs": [ { "id": "e0", "crn": "crn://e0", "clusters" : [ { "id": "z0" } ] } ] } ]
 		 with input as {"subjects": ["x1"], "action": "y0", "resource": "z0", "organizationId": "1234"}
 }
 
-test_authorized_when_resource_is_hierarchical {
-	not authorized with data.policies.polid as {"members": ["x1"], "organizationId": "1234", "statements": {"statementid": {"effect": "allow", "actions": ["y0"], "resources": ["e0"]}}}
-	     with data.tenants as [ { "id": "o1", "envs": [ { "id": "e1", "clusters" : [ { "id": "z0" } ] } ] } ]
+test_not_authorized_when_resource_is_hierarchical_env {
+	not authorized with data.policies.polid as {"members": ["x1"], "organizationId": "1234", "statements": {"statementid": {"effect": "allow", "actions": ["y0"], "resources": ["crn://e0"]}}}
+	     with data.tenants as [ { "id": "o1", "envs": [ { "id": "e1", "crn": "crn://e1", "clusters" : [ { "id": "z0" } ] } ] } ]
 		 with input as {"subjects": ["x1"], "action": "y0", "resource": "z0", "organizationId": "1234"}
 }
 
-test_authorized_when_resource_is_hierarchical {
-	authorized with data.policies.polid as {"members": ["x1"], "organizationId": "1234", "statements": {"statementid": {"effect": "allow", "actions": ["y0"], "resources": ["o0"]}}}
-	     with data.tenants as [ { "id": "o0", "envs": [ { "id": "e0", "clusters" : [ { "id": "z0" } ] } ] } ]
+test_authorized_when_resource_is_hierarchical_org {
+	authorized with data.policies.polid as {"members": ["x1"], "organizationId": "1234", "statements": {"statementid": {"effect": "allow", "actions": ["y0"], "resources": ["crn://o0"]}}}
+	     with data.tenants as [ { "id": "o0", "crn": "crn://o0", "envs": [ { "id": "e0", "clusters" : [ { "id": "z0" } ] } ] } ]
 		 with input as {"subjects": ["x1"], "action": "y0", "resource": "z0", "organizationId": "1234"}
 }
 
 
-test_authorized_when_resource_is_hierarchical {
-	not authorized with data.policies.polid as {"members": ["x1"], "organizationId": "1234", "statements": {"statementid": {"effect": "allow", "actions": ["y0"], "resources": ["o0"]}}}
-	     with data.tenants as [ { "id": "o1", "envs": [ { "id": "e0", "clusters" : [ { "id": "z0" } ] } ] } ]
+test_not_authorized_when_resource_is_hierarchical_org {
+	not authorized with data.policies.polid as {"members": ["x1"], "organizationId": "1234", "statements": {"statementid": {"effect": "allow", "actions": ["y0"], "resources": ["crn://o0"]}}}
+	     with data.tenants as [ { "id": "o1", "crn": "crn://o1", "envs": [ { "id": "e0", "clusters" : [ { "id": "z0" } ] } ] } ]
 		 with input as {"subjects": ["x1"], "action": "y0", "resource": "z0", "organizationId": "1234"}
 }

@@ -26,14 +26,14 @@ has_resource[[pol_id, statement_id]] {
 	statement_resource := policies[pol_id].statements[statement_id].resources[_]
 	some i, j
     tenants[i].envs[j].clusters[_].id == input.resource
-	common.resource_matches(tenants[i].envs[j].id, statement_resource)
+	common.resource_matches(tenants[i].envs[j].crn, statement_resource)
 }
 
 has_resource[[pol_id, statement_id]] {
 	statement_resource := policies[pol_id].statements[statement_id].resources[_]
 	some i
     tenants[i].envs[_].clusters[_].id == input.resource
-	common.resource_matches(tenants[i].id, statement_resource)
+	common.resource_matches(tenants[i].crn, statement_resource)
 }
 
 no_wildcard(a) {
