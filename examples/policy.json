@@ -24,7 +24,7 @@
           "crn://confluent.cloud/env=prod/kafka=*/topic=*"
         ],
         "actions": [
-          "kafka:consumTopic",
+          "kafka:consumeTopic",
           "kafka:produceTopic"
         ]
       }
