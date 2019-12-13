@@ -1,6 +1,4 @@
-package rego.authz_v1.test
-
-import data.rego.authz_v1
+package rego.authz_v1
 
 ###############  has_action  ########################################
 

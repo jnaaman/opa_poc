@@ -1,6 +1,4 @@
-package rego.common.test
-
-import data.rego.common
+package rego.common
 
 test_wild_card_match_01 {
     wildcard_match("cat", "c*t")

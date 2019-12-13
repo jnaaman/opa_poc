@@ -1,4 +1,7 @@
 {
+  "roles": [
+    { "actions" : [] }
+  ],
   "policies": {
     "9acbe920-d977-4c4d-a482-f125fe83a95a": {
       "id": "pol01",

@@ -3,6 +3,7 @@ package rego.authz_v1
 import data.rego.common
 import data.policies.policies
 import data.policies.tenants
+import data.policies.roles
 
 default authorized = false
 
@@ -58,8 +59,8 @@ has_action[[pol_id, statement_id]] {
 }
 
 has_action[[pol_id, statement_id]] {
-	policies[pol_id].statements[statement_id].role = role_id
-	roles[role_id].actions[_] = role_action
+	role_id := policies[pol_id].statements[statement_id].role
+	role_action := roles[role_id].actions[_]
 	action_matches(input.action, role_action)
 }
 
