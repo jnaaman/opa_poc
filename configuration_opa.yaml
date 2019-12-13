@@ -1,0 +1,25 @@
+services:
+  bundleService:
+    url: https://opa-poc-1.s3.us-east-2.amazonaws.com/
+    #credentials:
+    #  bearer:
+    #    token: "bGFza2RqZmxha3NkamZsa2Fqc2Rsa2ZqYWtsc2RqZmtramRmYWxkc2tm"
+
+bundles:
+  authz:
+    service: bundleService
+    resource: bundles/bundle.tar.gz
+    polling:
+      min_delay_seconds: 10
+      max_delay_seconds: 20
+
+#decision_logs:
+#  service: acmecorp
+#  reporting:
+#    min_delay_seconds: 300
+#    max_delay_seconds: 600
+#
+#status:
+#  service: acmecorp
+
+default_decision: /http/example/authz/allow
