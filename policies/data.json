@@ -1,0 +1,72 @@
+{
+  "policies": {
+    "9acbe920-d977-4c4d-a482-f125fe83a95a": {
+      "id": "pol01",
+      "organizationId": 901,
+      "name": "test-policy",
+      "description": "PoC policy",
+      "members": [
+        "user:1"
+      ],
+      "statements": {
+        "900e12b7-8625-4881-985f-8c460b79f142": {
+          "effect": "allow",
+          "resources": [
+            "crn://confluent.cloud/env=dev/kafka=*/topic=*",
+            "crn://confluent.cloud/env=stage/kafka=*/topic=*"
+          ],
+          "actions": [
+            "*"
+          ]
+        },
+        "7bca8de2-665b-4843-aa2e-c48850bbfe83": {
+          "effect": "allow",
+          "resources": [
+            "crn://confluent.cloud/env=prod/kafka=*/topic=*"
+          ],
+          "actions": [
+            "kafka:consumeTopic",
+            "kafka:produceTopic"
+          ]
+        }
+      }
+    }
+  },
+  "tenants": [{
+    "id": "999",
+    "crn": "crn://poc.ccloud/organization=999",
+    "envs": [{
+        "id": "t987",
+        "name": "dev",
+        "crn": "crn://poc.ccloud/env=t987",
+        "clusters": [{
+            "id": "lkc-1234",
+            "crn": "crn://poc.ccloud/kafka=lkc-1234",
+            "type": "kafka"
+          },
+          {
+            "id": "lkc-4444",
+            "crn": "crn://poc.ccloud/kafka=lkc-4444",
+            "type": "ksql"
+          }
+        ]
+      },
+      {
+        "id": "t1029",
+        "name": "prod",
+        "crn": "crn://poc.ccloud/env=t1029",
+        "clusters": [{
+            "id": "lkc-534",
+            "crn": "crn://poc.ccloud/kafka=lkc-534",
+            "type": "kafka"
+          },
+          {
+            "id": "lkc-9944",
+            "crn": "crn://poc.ccloud/kafka=lkc-9944",
+            "type": "ksql"
+          }
+        ]
+      }
+    ]
+  }]
+}
