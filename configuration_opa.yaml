@@ -22,4 +22,4 @@ bundles:
 #status:
 #  service: acmecorp
 
-default_decision: /http/example/authz/allow
+default_decision: /http/example/authz/deny
