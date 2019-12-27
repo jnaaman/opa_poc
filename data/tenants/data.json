@@ -1,0 +1,42 @@
+[
+  {
+    "id": "999",
+    "crn": "crn://poc.ccloud/organization=999",
+    "envs": [
+      {
+        "id": "t987",
+        "name": "dev",
+        "crn": "crn://poc.ccloud/env=t987",
+        "clusters": [
+          {
+            "id": "lkc-1234",
+            "crn": "crn://poc.ccloud/kafka=lkc-1234",
+            "type": "kafka"
+          },
+          {
+            "id": "lkc-4444",
+            "crn": "crn://poc.ccloud/kafka=lkc-4444",
+            "type": "ksql"
+          }
+        ]
+      },
+      {
+        "id": "t1029",
+        "name": "prod",
+        "crn": "crn://poc.ccloud/env=t1029",
+        "clusters": [
+          {
+            "id": "lkc-534",
+            "crn": "crn://poc.ccloud/kafka=lkc-534",
+            "type": "kafka"
+          },
+          {
+            "id": "lkc-9944",
+            "crn": "crn://poc.ccloud/kafka=lkc-9944",
+            "type": "ksql"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,6 +1,6 @@
 # Package common contains functions and rules that are shared between v1 and v2
 # of our rego logic
-package rego.common
+package common
 
 wildcard(a) {
 	contains(a, "*")

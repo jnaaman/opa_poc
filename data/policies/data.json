@@ -1,0 +1,53 @@
+{
+  "9acbe920-d977-4c4d-a482-f125fe83a95a": {
+    "id": "pol01",
+    "organizationId": 901,
+    "name": "super policy",
+    "description": "PoC policy",
+    "members": [
+      "user:1"
+    ],
+    "statements": {
+      "900e12b7-8625-4881-985f-8c460b79f1ab": {
+        "effect": "allow",
+        "resources": [
+          "*"
+        ],
+        "actions": [
+          "*"
+        ]
+      }
+    }
+  },
+  "9acbe920-d977-4c4d-a482-f125fe83a95b": {
+    "id": "pol02",
+    "organizationId": 901,
+    "name": "test-policy",
+    "description": "PoC policy",
+    "members": [
+      "user:2"
+    ],
+    "statements": {
+      "900e12b7-8625-4881-985f-8c460b79f142": {
+        "effect": "allow",
+        "resources": [
+          "crn://poc.ccloud/env=t987",
+          "crn://poc.ccloud/env=t999"
+        ],
+        "actions": [
+          "*"
+        ]
+      },
+      "7bca8de2-665b-4843-aa2e-c48850bbfe83": {
+        "effect": "allow",
+        "resources": [
+          "crn://poc.ccloud/env=t1029"
+        ],
+        "actions": [
+          "kafka:consumeTopic",
+          "kafka:produceTopic"
+        ]
+      }
+    }
+  }
+}

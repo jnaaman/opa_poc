@@ -25,7 +25,7 @@ NB: Assumes running from this directory; just adjust all paths if you want to st
 Note that the input still uses subjects as the field instead of members.
 
 ```opa
-$ opa run -w authz_v1.rego common.rego policies:../examples/policies.json
+$ opa run -w authz_v1.rego common.rego policies:../data/policies/data.json
 OPA 0.9.2 (commit 9fbff4c3, built at 2018-09-24T16:12:26Z)
 
 > data.authz_v1.authorized

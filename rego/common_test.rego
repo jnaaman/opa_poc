@@ -1,4 +1,4 @@
-package rego.common
+package common
 
 test_wild_card_match_01 {
     wildcard_match("cat", "c*t")

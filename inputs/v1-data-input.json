@@ -1,0 +1,8 @@
+{
+  "input": {
+    "subjects": ["user:2"],
+    "action": "kafka:CreateTopic",
+    "resource": "lkc-1234",
+    "organizationId": 901
+  }
+}

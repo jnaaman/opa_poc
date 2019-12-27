@@ -1,9 +1,9 @@
-package rego.authz_v1
+package authz_v1
 
-import data.rego.common
-import data.policies.policies
-import data.policies.tenants
-import data.policies.roles
+import data.common
+import data.policies
+import data.tenants
+import data.roles
 
 default authorized = false
 
